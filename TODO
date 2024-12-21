@@ -1,5 +1,11 @@
 Development:
 
+
+Features: 
+Cut to memmory
+Rename the items
+
+Settings:
 "advancedCopyPaste.maxClipboardItems": {
     "type": "number",
     "default": 10,
