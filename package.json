@@ -1,9 +1,10 @@
 {
   "name": "advanced-copy-paste",
-  "publisher": "acp",
+  "publisher": "leochabu",
   "displayName": "Advanced Copy Paste",
-  "description": "Allows you to copy multiple texts and insert one-by-one in your VS Code",
+  "description": "Allows you to copy multiple texts and insert one-by-one (or all at once) in your VS Code",
   "version": "0.0.1",
+  "icon": "logo.png",
   "engines": {
     "vscode": "^1.96.0"
   },

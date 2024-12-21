@@ -40,7 +40,7 @@ function activate(context) {
         }
     });    
 
-    clipboardProvider.addItem("Example text\nLine 2\nLine 3");
+    clipboardProvider.addItem("Click to test\nLine 2\nLine 3");
 }
 
 

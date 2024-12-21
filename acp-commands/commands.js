@@ -200,7 +200,7 @@ function registerCommands(context, clipboardProvider, settings) {
     /* Configuration Commands */
     context.subscriptions.push(
         vscode.commands.registerCommand('acp-config-entry.openSettings', () => {
-            vscode.commands.executeCommand('workbench.action.openSettings', '@ext:acp.advanced-copy-paste');
+            vscode.commands.executeCommand('workbench.action.openSettings', '@ext:leochabu.advanced-copy-paste');
         })
     );
 
