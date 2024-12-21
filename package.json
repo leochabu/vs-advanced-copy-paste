@@ -1,0 +1,184 @@
+{
+  "name": "advanced-copy-paste",
+  "publisher": "acp",
+  "displayName": "Advanced Copy Paste",
+  "description": "Allows you to copy multiple texts and insert one-by-one in your VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:acp-view",
+    "onCommand:acp-view.refresh",
+    "onCommand:acp-view.pasteItem",
+    "onCommand:acp-view.copySelection",
+    "onCommand:acp-view.pasteAll",
+    "onCommand:acp-view.clearAll",
+    "onCommand:acp-view.removeItem",
+    "onCommand:acp-view.openWebview"
+  ],
+  "main": "./extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leochabu/vs-advanced-copy-paste"
+  },
+
+  "contributes": {
+    "configuration": {
+      "title": "Advanced Copy Paste",
+      "properties": {
+        "advancedCopyPaste.LineEnding": {
+          "type": "string",
+          "default": "\n",
+          "description": "Line ending to use when pasting text."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "acp-extension",
+          "title": "Advanced Copy Paste",
+          "icon": "acp-resources/acp-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "acp-extension": [
+        {
+          "id": "acp-view",
+          "name": "Clipboard List"
+        },
+        {
+          "id": "acp-search-view",
+          "name": "Search Copied Items",
+          "type": "webview"
+        },
+        {
+          "id": "acp-config-entry",
+          "name": "Settings"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "acp-view.refresh",
+        "title": "Refresh List",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "acp-view.search",
+        "title": "Filter",
+        "icon": "$(search)"
+      },
+      {
+        "command": "acp-view.pasteAll",
+        "title": "Paste All",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "acp-view.clearAll",
+        "title": "Clear List",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "acp-view.saveToFile",
+        "title": "Save",
+        "icon": "$(save)"
+      },
+      {
+        "command": "acp-view.openWebview",
+        "title": "View All",
+        "icon": "$(file)"
+      },
+      {
+        "command": "acp-view.removeItem",
+        "title": "Remove Item",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "acp-view.copySelection",
+        "title": "Copy Selection",
+        "icon": "$(file)"
+      },
+      {
+        "command": "acp-view.pasteItem",
+        "title": "📥 Paste Item"
+      },
+      {
+        "command": "acp-config-entry.openSettings",
+        "title": "Open Settings",
+        "icon": "$(gear)" 
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "acp-view.pasteAll",
+          "when": "view == acp-view",
+          "group": "navigation@1"
+        },
+        {
+          "command": "acp-view.openWebview",
+          "when": "view == acp-view",
+          "group": "navigation@2"
+        },
+        {
+          "command": "acp-view.search",
+          "when": "view == acp-view",
+          "group": "navigation@3"
+        },
+        {
+          "command": "acp-view.saveToFile",
+          "when": "view == acp-view",
+          "group": "navigation@4"
+        },
+        {
+          "command": "acp-view.clearAll",
+          "when": "view == acp-view",
+          "group": "navigation@5"
+        },
+        {
+          "command": "acp-view.refresh",
+          "when": "view == acp-view",
+          "group": "navigation@6"
+        },
+        {
+          "command": "acp-config-entry.openSettings",
+          "when": "view == acp-config-entry",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "acp-view.removeItem",
+          "when": "viewItem == clipboardItem",
+          "group": "inline"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "acp-view.copySelection",
+        "key": "ctrl+shift+c",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.16.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}

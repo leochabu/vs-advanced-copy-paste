@@ -1,0 +1,13 @@
+Development:
+
+"advancedCopyPaste.maxClipboardItems": {
+    "type": "number",
+    "default": 10,
+    "description": "Maximum number of clipboard items to store."
+  },
+  
+"advancedCopyPaste.autoClear": {
+    "type": "boolean",
+    "default": false,
+    "description": "Automatically clear the clipboard list when VS Code is closed."
+},
