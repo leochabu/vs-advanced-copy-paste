@@ -21,9 +21,6 @@ function activate(context) {
 
     registerCommands(context, clipboardProvider, settings);
 
-
-
-    
     vscode.workspace.onDidChangeConfiguration(event => {
         if (event.affectsConfiguration('advancedCopyPaste.LineEnding')) {
             const settings = vscode.workspace.getConfiguration('advancedCopyPaste');
