@@ -38,6 +38,9 @@
 6. **Configure Settings**:
    - Open the settings menu (`Ctrl+,`) and search for `Advanced Copy Paste` to customize behavior.
 
+
+![Demo](acp-demo.gif)
+
 ---
 
 ## Commands
@@ -65,7 +68,7 @@ Customize the extension to suit your workflow:
 
 ## Issues and Feedback
 
-Found a bug or have a feature request? Please report it on the [GitHub Issues page](https://github.com/your-repo/issues).
+Found a bug or have a feature request? Please report it on the [GitHub Issues page](https://github.com/leochabu/vs-advanced-copy-paste/issues).
 
 ---
 
